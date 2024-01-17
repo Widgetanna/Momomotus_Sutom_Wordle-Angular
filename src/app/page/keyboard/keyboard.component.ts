@@ -245,18 +245,7 @@ export class KeyboardComponent {
       const tryContainer =
         this.tryContainers.get(this.numSubmittedTries)?.nativeElement as 
         HTMLElement;
-        if (this.numSubmittedTries === 0) {
-// Si c'est le premier essai, montrer la première lettre du mot dans la première case
-          const firstLetterEle = tryContainer.querySelector('.letter-container');
-          if (firstLetterEle) {
-            firstLetterEle.classList.add('fold');
-            await this.wait(180);
-            curTry.letters[0].state = LetterState.PENDING; // remettre à l'état initial
-            firstLetterEle.classList.remove('fold');
-            await this.wait(180);
-          }
-        }
-      tryContainer.classList.add('shake');
+        tryContainer.classList.add('shake');
       setTimeout(() => {
         tryContainer.classList.remove('shake');
       }, 500);
