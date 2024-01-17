@@ -1,0 +1,44 @@
+<section>
+    <app-header></app-header>
+<div class="container">
+    <div class="keybord-container">
+        <div class="try-container" *ngFor="let try of tries" #tryContainer>
+            <div class="letter-container" *ngFor="let letter of try.letters"
+            [class.match]="letter.state === LetterState.FULL_MATCH"
+            [class.partial]="letter.state === LetterState.PARTIAL_MATCH"
+            [class.wrong]="letter.state === LetterState.WRONG"
+            [class.has-text]="letter.text !== ''">
+            
+                {{letter.text}}
+            </div>
+        </div>
+    </div>
+    <div class="keyboard">
+        <div [class]="['row' + i, 'row'].join(' ')"
+         *ngFor="let row of keyboardRows; let i = index">
+            <ng-container *ngFor="let key of row">
+                <div class="key" [ngClass]="{'special-key': key === 'SUPPRIMER' || key === 'VALIDER'}">
+                    {{key}}
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="info-msg"
+    [class.show]="infoMsg !== ''"
+    [class.fade-out]="fadeOutInfoMessage">
+    {{infoMsg}}
+</div>
+
+    <div class="modal" *ngIf="modalVisible">
+    <button class="close-button" (click)="closeInfoMsg()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+    
+        <h1>FELICITATIONS  {{ userName || 'Guest' }} !</h1>
+    <div class = "text-containeur">
+      <p>Le mot était bien PREMICES.</p>
+      <p>Tu l'as découvert en _ coups!</p>
+    </div>  
+  </div>  
+</div>
+</section>

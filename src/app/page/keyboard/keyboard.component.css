@@ -1,0 +1,164 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.keybord-container {
+
+    flex-grow: 1;
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.try-container {
+    display: flex;
+    background-color: rgb(21, 75, 211);
+   }
+.shake {
+    animation-name: shake;
+    animation-duration: 500ms;
+}
+@keyframes shake {
+	10%,
+	90% {
+	  	transform: translateX(-1px);
+	}
+
+	20%,
+	80% {
+		transform: translateX(2px);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translateX(-4px);
+	}
+
+	40%,
+	60% {
+		transform: translateX(4px);
+	}
+}
+
+.letter-container {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+   
+    }
+
+    .has-text {
+        border-color: #740606;
+        animation-name: letter-pop;
+        animation-duration: 120ms;
+    }
+    
+   .match {
+        background-color: #e61216;
+        border-color: #801212;
+        color: white;
+    }
+
+    .partial {
+        background-color: #efb811;
+        border-color: #df9319;
+        color: white;
+    }
+
+    .wrong {
+        background-color: rgb(21, 75, 211);
+        border-color: #1f3851;
+        color: white;
+    }
+
+    .fold {
+        transform: scaleY(0);
+    }
+
+    .bounce {
+        animation-name: bounce;
+        animation-duration: 1s;
+    }
+.keyboard {
+    margin-bottom: 160px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.row {
+    display: flex;
+    margin-top: 10px; 
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    border: 2px solid #ddd;
+}
+.special-key {
+    width: 90px;
+    height: 40px;
+    border-radius: 20px 20px 20px 20px; 
+    font-size: 12px;
+    }
+.has-text {
+     border-color:darkgray;
+     animation-name: letter-pop;
+     animation-duration: 120ms;
+    }
+    /* Animation pour la lettre qui entre.*/
+    @keyframes letter-pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+        100% { transform: scale(1); }
+    }
+    
+   .modal  .info-msg {
+    position: absolute;
+    top: 30px;
+    padding: 80px 24px;
+    border: 1px solid white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  .show {
+    opacity: 1;
+ }
+ .fade-out {
+    opacity: 0;
+    transition: opacity 500ms;
+ }
+
+   p {
+    margin-bottom: -10px; 
+   }
+   i {
+    color:white;
+   }
+  .close-button {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    background-color: black;
+    border: none;
+   }

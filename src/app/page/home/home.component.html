@@ -1,0 +1,15 @@
+<section>
+    <h1>{{ title }}</h1>
+
+<div class = "range">
+    <div class="square red"></div>
+    <div class="circle yellow"></div>
+    <div class="square blue"></div>
+</div>
+
+<p> Pour commencer, quel est ton prénom?</p>
+<div class = "inputRange">
+    <input [(ngModel)]="userName"/>
+     <button class="button" (click)="navigateToNewPage()">Lets'go!</button>
+</div>
+</section>

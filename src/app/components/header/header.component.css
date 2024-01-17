@@ -1,0 +1,19 @@
+.headerSection{
+    display: flex;
+    justify-content: space-around;
+}
+.fa-question-circle text-white  {
+    color: white;
+    margin: 10px;
+}
+.icone {
+    margin: 10px;
+
+}
+hr {
+    width: 100%;
+    color:white;
+}
+h1{
+ margin-right:25px ;   
+}
